@@ -202,37 +202,15 @@ body{
     flex-direction: row;
 }
 
+.video-container{
+    position: relative;
 
+}
 
-/* .sub-movies{
-    display: block;
-    background-color: brown;
+.image{
     position: absolute;
-    margin-top: 20px;
-    margin-left: -20px;
-    z-index: 1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
-#list-sub-mivies{
-    display: inline-block;
-    width: 240px;
-
-}
-.sub-series{
-    display: none;
-}
-
-.navlist ul li:hover .sub-movies{
-    display: block;
-    position: absolute;
-    margin-top: 20px;
-    margin-left: -20px;
-    z-index: 1;
-}
-
-.navlist ul li:hover .sub-series{
-    display: block;
-    position: absolute;
-    margin-top: 20px;
-    margin-left: -20px;
-    z-index: 1;
-} */
