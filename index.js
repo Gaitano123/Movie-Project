@@ -25,7 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayMovie(movie){
         const movieContainer = document.createElement('div')
         movieContainer.className="movie-container"
-        movieContainer.addEventListener('click', () => hoveringMovie(movie.imdbID))
+        movieContainer.addEventListener('click', (event) => {
+            event.preventDefault()
+            hoveringMovie(movie.imdbID)
+            const { clientX: mouseX, clientY: mouseY} = event
+            detailContainer.style.left = `${mouseX}px`
+            detailContainer.style.top = `${mouseY}px`
+
+            detailContainer.classList.add("visible")
+        })
         resultContainer.appendChild(movieContainer)
 
         const moviePoster = document.createElement('img')
@@ -146,53 +154,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayDetails(detail){
         
-
         const infoContainer = document.createElement('div')
         infoContainer.className = 'info-container'
         detailContainer.appendChild(infoContainer)
 
         const infoTitle = document.createElement('p')
-        infoTitle.innerText = detail.Title
+        infoTitle.innerText ="Title: " + detail.Title
         infoTitle.className = 'info-title'
         infoContainer.appendChild(infoTitle)
 
         const infoYear = document.createElement('p')
-        infoYear.innerText = detail.Year
+        infoYear.innerText ="Year: " + detail.Year
         infoYear.className = 'info-year'
         infoContainer.appendChild(infoYear)
 
         const infoGenre = document.createElement('p')
-        infoGenre.innerText = detail.Genre
+        infoGenre.innerText ="Genre: " + detail.Genre
         infoGenre.className = 'info-Genre'
         infoContainer.appendChild(infoGenre)
 
         const infoRuntime = document.createElement('p')
-        infoRuntime.innerText = detail.Runtime
+        infoRuntime.innerText ="Runtime: " + detail.Runtime
         infoRuntime.className = 'info-Runtime'
         infoContainer.appendChild(infoRuntime)
 
         const infoActor = document.createElement('p')
-        infoActor.innerText = detail.Actors
+        infoActor.innerText ="Actors: " + detail.Actors
         infoActor.className = 'info-Actor'
         infoContainer.appendChild(infoActor)
 
         const infoDirector = document.createElement('p')
-        infoDirector.innerText = detail.Director
+        infoDirector.innerText ="Director: " + detail.Director
         infoDirector.className = 'info-Director'
         infoContainer.appendChild(infoDirector)
 
         const infoPlot = document.createElement('p')
         infoPlot.innerText = detail.Plot
-        infoPlot.className = 'info-Plot'
+        infoPlot.className ="Plot: " + 'info-Plot'
         infoContainer.appendChild(infoPlot)
 
         const infoCountry = document.createElement('p')
         infoCountry.innerText = detail.Country
-        infoCountry.className = 'info-Country'
+        infoCountry.className ="Country: " + 'info-Country'
         infoContainer.appendChild(infoCountry)
 
         const infoLanguage = document.createElement('p')
-        infoLanguage.innerText = detail.Language
+        infoLanguage.innerText ="Language: " + detail.Language
         infoLanguage.className = 'info-Language'
         infoContainer.appendChild(infoLanguage)
     }

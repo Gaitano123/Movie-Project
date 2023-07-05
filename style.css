@@ -307,3 +307,22 @@ body{
     z-index: -1;
 }
 
+#detail-movie{
+    position: fixed;
+    z-index: 10000;
+    width: fit-content;
+    background-color: brown;
+    border-radius: 6px;
+    display: none;
+}
+
+#detail-movie.visible{
+    display: block;
+}
+
+#detail-menu .item{
+    padding: 8px 10px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer
+}
