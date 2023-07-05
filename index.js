@@ -63,15 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
         movieTrailer.href = `https://www.youtube.com/results?search_query=${filmName}+trailer`
         movieTrailer.target = "_blank"
         movieTrailer.innerText = 'trailer';
-        // <iframe width="853" height="480" src="https://www.youtube.com/embed/gaBdgu00otE" title="Ip Man 2: Legend of the Grandmaster OFFICIAL TRAILER" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         movieTrailer.className="movie-trailer"
         movieContainer.appendChild(movieTrailer)
-
-        // const movieVideo = document.createElement('iframe')
-        // movieVideo.src = `https://www.youtube.com/embed/gaBdgu00otE`
-        // movieVideo.className = "movie-video"
-        // movieVideo.innerText= "Movie"
-        // movieContainer.appendChild(movieVideo)
 
         return movieId
     }
@@ -99,6 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
             data.forEach(movie =>{
                 const favouritePack = document.createElement("div")
                 favouritePack.className = "favourite-pack"
+                favouritePack.addEventListener("click", () =>{
+                    removeFavourite(movie.id)
+                })
                 favouritecontainer.appendChild(favouritePack)
         
                 const favouritePoster = document.createElement('img')
@@ -119,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const removeButton = document.createElement('button')
                 removeButton.className = "remove-button"
                 removeButton.innerText = 'Remove'
-                removeButton.addEventListener('click', () => removeFavourite(movie))
                 favouritePack.appendChild(removeButton)
 
                 favouriteFilms.push(movie.imdbID)
@@ -127,5 +122,18 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
-   
+    function removeFavourite(id){
+
+        fetch(`http://localhost:3000/favourites/${id}`,{
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(movie => console.log(movie))
+        displayFavouriteMovie()
+    }
+
+    
 })
