@@ -145,3 +145,14 @@ body{
     
 }
 
+#search-result{
+    border: 2px solid black;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: rgb(36,16,35);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
