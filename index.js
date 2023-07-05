@@ -76,5 +76,18 @@ document.addEventListener('DOMContentLoaded', () => {
         return movieId
     }
 
-    
+    function addFavouriteMovie(movie){
+        if(!favouriteFilms.includes(movie.imdbID)){
+            fetch('http://localhost:3000/favourites', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(movie)
+            })
+            displayFavouriteMovie()
+        }
+
+    }
+
 })
