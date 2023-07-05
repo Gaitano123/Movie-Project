@@ -50,6 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
         movieYear.className="movie-year"
         movieContainer.appendChild(movieYear)
 
+        const breakSection = document.createElement('p')
+        movieContainer.appendChild(breakSection)
+
+        const movieTrailer = document.createElement('a')
+        const filmName = movie.Title
+        movieTrailer.href = `https://www.youtube.com/results?search_query=${filmName}+trailer`
+        movieTrailer.target = "_blank"
+        movieTrailer.innerHTML = `<button class="trailer-button"><i class="fa fa-play-circle" aria-hidden="true"></i></button>`
+        movieTrailer.className="movie-trailer"
+        breakSection.appendChild(movieTrailer)
+
         const movieButton = document.createElement('button');
         movieButton.innerText = 'favourites';
         movieButton.className="movie-button";
@@ -57,14 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
             addFavouriteMovie(movie)
         })
         movieContainer.appendChild(movieButton)
-        
-        const movieTrailer = document.createElement('a')
-        const filmName = movie.Title
-        movieTrailer.href = `https://www.youtube.com/results?search_query=${filmName}+trailer`
-        movieTrailer.target = "_blank"
-        movieTrailer.innerText = 'trailer';
-        movieTrailer.className="movie-trailer"
-        movieContainer.appendChild(movieTrailer)
 
         return movieId
     }
@@ -135,5 +138,61 @@ document.addEventListener('DOMContentLoaded', () => {
         displayFavouriteMovie()
     }
 
-    
+    function hoveringMovie(movieId){
+        fetch(`https://www.omdbapi.com/?apikey=5155ad88&i=${movieId}`)
+        .then(res => res.json())
+        .then(details => details.forEach(detail => displayDetails(detail)))
+    }
+
+    function displayDetails(detail){
+
+        const infoContainer = document.createElement('div')
+        infoContainer.className = 'info-container'
+        detailContainer.appendChild(infoContainer)
+
+        const infoTitle = document.createElement('p')
+        infoTitle.innerText = detail.Title
+        infoTitle.className = 'info-title'
+        infoContainer.appendChild(infoTitle)
+
+        const infoYear = document.createElement('p')
+        infoYear.innerText = detail.Year
+        infoYear.className = 'info-year'
+        infoContainer.appendChild(infoYear)
+
+        const infoGenre = document.createElement('p')
+        infoGenre.innerText = detail.Genre
+        infoGenre.className = 'info-Genre'
+        infoContainer.appendChild(infoGenre)
+
+        const infoRuntime = document.createElement('p')
+        infoRuntime.innerText = detail.Runtime
+        infoRuntime.className = 'info-Runtime'
+        infoContainer.appendChild(infoRuntime)
+
+        const infoActor = document.createElement('p')
+        infoActor.innerText = detail.Actors
+        infoActor.className = 'info-Actor'
+        infoContainer.appendChild(infoActor)
+
+        const infoDirector = document.createElement('p')
+        infoDirector.innerText = detail.Director
+        infoDirector.className = 'info-Director'
+        infoContainer.appendChild(infoDirector)
+
+        const infoPlot = document.createElement('p')
+        infoPlot.innerText = detail.Plot
+        infoPlot.className = 'info-Plot'
+        infoContainer.appendChild(infoPlot)
+
+        const infoCountry = document.createElement('p')
+        infoCountry.innerText = detail.Country
+        infoCountry.className = 'info-Country'
+        infoContainer.appendChild(infoCountry)
+
+        const infoLanguage = document.createElement('p')
+        infoLanguage.innerText = detail.Language
+        infoLanguage.className = 'info-Language'
+        infoContainer.appendChild(infoLanguage)
+    }
 })
