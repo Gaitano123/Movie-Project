@@ -1,0 +1,106 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: rgb(65,67,71);
+}
+
+.navbar{
+    background-color: rgb(65,67,71);
+    display: flex;
+    width: 100%;
+    height: 85px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;
+}
+
+.navbar a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.navbar a:hover{
+    background-color: rgb(152,131,244);
+}
+
+.navbar ul li{
+    display: inline-block;
+    padding-left: 100px;
+}
+
+.sub-movies{
+    display: none;
+}
+
+.navbar ul li:hover .sub-movies{
+    display: block;
+    position: absolute;
+    background-color: rgb(65,67,71);
+    z-index: 1;
+}
+
+.navbar ul li:hover .sub-movies ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #fff;
+}
+
+.navbar ul li:hover .sub-movies ul li{
+    padding-left: 0%;
+}
+
+.navbar ul li:hover .sub-movies ul li a{
+    color: aliceblue;
+}
+
+.sub-series{
+    display: none;
+}
+
+.navbar ul li:hover .sub-series{
+    display: block;
+    position: absolute;
+    background-color: rgb(65,67,71);
+    z-index: 1;
+}
+
+.navbar ul li:hover .sub-series ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar ul li:hover .sub-series ul li{
+    padding-left: 0%;
+}
+
+.navbar ul li:hover .sub-series ul li a{
+    color: aliceblue;
+}
+
+.navbutton button{
+    height: 40px;
+    width: 65px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 7px;
+    font-weight: bold;
+}
+
+.navbutton button:hover{
+    background-color: rgb(152,131,244);
+}
+
