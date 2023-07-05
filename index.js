@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const { clientX: mouseX, clientY: mouseY} = event
             detailContainer.style.left = `${mouseX}px`
             detailContainer.style.top = `${mouseY}px`
+            detailContainer.innerHTML = ''
 
             detailContainer.classList.add("visible")
         })

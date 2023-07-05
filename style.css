@@ -190,7 +190,7 @@ body{
 
 .movie-button{
     height: 35px;
-    width: 110px;
+    width: 140px;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 16px;
@@ -308,21 +308,44 @@ body{
 }
 
 #detail-movie{
+    display: none;
     position: fixed;
     z-index: 10000;
-    width: fit-content;
-    background-color: brown;
-    border-radius: 6px;
-    display: none;
+    border: none;
+    border-radius: 7px;
+    font-size: 19px;
+    font-weight: 600;
+    height: fit-content;
+    width: 60vh;
+    text-align: left;
+    padding: 25px;
+    color: white;
+    background-color: rgb(65,67,71);
+    box-shadow:  5px 5px 10px #292929,
+    -5px -5px 10px #2d2d2d;
 }
 
 #detail-movie.visible{
     display: block;
 }
 
-#detail-menu .item{
+/* #detail-menu .item{
     padding: 8px 10px;
     font-size: 14px;
     color: white;
     cursor: pointer
-}
+        border: none;
+    margin: 10px;
+    border-radius: 7px;
+    background-color: rgb(35,32,32);
+    margin: 10px;
+    width: min-content;
+    color: white;
+    font-size: 16px;
+    height: fit-content;
+    width: 40vh;
+    overflow: hidden;
+    text-align: center;
+    box-shadow:  5px 5px 10px #292929,
+    -5px -5px 10px #2d2d2d;
+} */
