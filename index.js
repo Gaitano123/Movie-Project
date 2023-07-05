@@ -25,16 +25,31 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayMovie(movie){
         const movieContainer = document.createElement('div')
         movieContainer.className="movie-container"
-        movieContainer.addEventListener('click', (event) => {
-            event.preventDefault()
-            hoveringMovie(movie.imdbID)
-            const { clientX: mouseX, clientY: mouseY} = event
-            detailContainer.style.left = `${mouseX}px`
-            detailContainer.style.top = `${mouseY}px`
-            detailContainer.innerHTML = ''
-
-            detailContainer.classList.add("visible")
+        movieContainer.addEventListener('mouseover', (event) => {
+            if(event.target.OffsetParent = resultContainer){
+                event.preventDefault()
+                hoveringMovie(movie.imdbID)
+                const { clientX: mouseX, clientY: mouseY} = event
+                detailContainer.style.left = `${mouseX}px`
+                detailContainer.style.top = `${mouseY}px`
+                detailContainer.innerHTML = ''
+    
+                detailContainer.classList.add("visible")
+            }
         })
+        movieContainer.addEventListener('mouseout', (event) => {
+                event.preventDefault()
+                hoveringMovie(movie.imdbID)
+                const { clientX: mouseX, clientY: mouseY} = event
+                detailContainer.style.left = `${mouseX}px`
+                detailContainer.style.top = `${mouseY}px`
+                detailContainer.innerHTML = ''
+        })
+        // movieContainer.addEventListener('mouseover',(event) => {
+        //     if(event.target.offsetParent != resultContainer){
+        //         resultContainer.classList.remove("visible")
+        //     }
+        // })
         resultContainer.appendChild(movieContainer)
 
         const moviePoster = document.createElement('img')
