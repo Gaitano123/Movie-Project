@@ -141,10 +141,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function hoveringMovie(movieId){
         fetch(`https://www.omdbapi.com/?apikey=5155ad88&i=${movieId}`)
         .then(res => res.json())
-        .then(details => details.forEach(detail => displayDetails(detail)))
+        .then(details => displayDetails(details))
     }
 
     function displayDetails(detail){
+        
 
         const infoContainer = document.createElement('div')
         infoContainer.className = 'info-container'
