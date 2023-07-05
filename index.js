@@ -90,4 +90,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+    function displayFavouriteMovie(){
+        favouritecontainer.innerText=''
+
+        fetch('http://localhost:3000/favourites')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(movie =>{
+                const favouritePack = document.createElement("div")
+                favouritePack.className = "favourite-pack"
+                favouritecontainer.appendChild(favouritePack)
+        
+                const favouritePoster = document.createElement('img')
+                favouritePoster.src = movie.Poster;
+                favouritePoster.className = "favourite-poster"
+                favouritePack.appendChild(favouritePoster)
+        
+                const favouriteTitle = document.createElement('p')
+                favouriteTitle.innerText = movie.Title
+                favouriteTitle.className = "favourite-title"
+                favouritePack.appendChild(favouriteTitle)
+        
+                const favouriteType = document.createElement('p')
+                favouriteType.innerText = movie.Type;
+                favouriteType.className = "favourite-type"
+                favouritePack.appendChild(favouriteType)
+        
+                const removeButton = document.createElement('button')
+                removeButton.className = "remove-button"
+                removeButton.innerText = 'Remove'
+                removeButton.addEventListener('click', () => removeFavourite(movie))
+                favouritePack.appendChild(removeButton)
+
+                favouriteFilms.push(movie.imdbID)
+            })
+        })
+    }
+
+   
 })
