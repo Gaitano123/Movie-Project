@@ -241,4 +241,14 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       document.getElementById('popout').classList.add('hide');
     });
+
+    const logingForm = document.getElementById('logingin_form')
+    logingForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+    })
+
+    const signinginForm = document.getElementById('signingin_form')
+    signinginForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+    })
 })
