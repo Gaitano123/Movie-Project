@@ -19,6 +19,7 @@ body{
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    overflow: hidden;
     z-index: 1000;
 }
 
@@ -46,20 +47,26 @@ body{
 
 .sub-movies{
     display: none;
+    background-color: rgb(65, 67, 71);
+    margin-top: 20px;
+    z-index: 2000;
+    height: 300px;
+}
+
+#list-sub-movies a{
+    float: none;
+    display: block;
 }
 
 .navbar ul li:hover .sub-movies{
     display: block;
     position: absolute;
-    background-color: rgb(65,67,71);
-    z-index: 1000;
 }
 
 .navbar ul li:hover .sub-movies ul{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #fff;
 }
 
 .navbar ul li:hover .sub-movies ul li{
@@ -72,13 +79,14 @@ body{
 
 .sub-series{
     display: none;
+    background-color: rgb(65, 67, 71);
+    margin-top: 20px;
+    z-index: 2000
 }
 
 .navbar ul li:hover .sub-series{
     display: block;
     position: absolute;
-    background-color: rgb(65,67,71);
-    z-index: 1;
 }
 
 .navbar ul li:hover .sub-series ul{
@@ -344,7 +352,7 @@ form button{
 }
 
 ::-webkit-scrollbar{
-    width: 10px;
+    width: 13px;
 }
 
 ::-webkit-scrollbar-thumb{
@@ -375,4 +383,40 @@ footer a{
 
 footer a:hover{
     color: #fff;
+}
+
+.modal{
+    display: none;
+    margin-top: 100vh;
+    position: absolute;
+    z-index: 1000000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content{
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close{
+    color: aqua;
+    float: right;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.close:hover,
+.close:focus{
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
 }

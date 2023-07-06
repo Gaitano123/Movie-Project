@@ -216,4 +216,18 @@ document.addEventListener('DOMContentLoaded', () => {
         infoLanguage.className = 'info-Language'
         infoContainer.appendChild(infoLanguage)
     }
+
+    const openModalButton = document.getElementById('login');
+    const modal = document.getElementById('myModal');
+    const closeModal = document.getElementsByClassName('close')[0];
+    
+    // Open the modal when the button is clicked
+    openModalButton.addEventListener('click', function () {
+      modal.style.display = 'block';
+    });
+    
+    // Close the modal when the close button is clicked
+    closeModal.addEventListener('click', function () {
+      modal.style.display = 'none';
+    });
 })
