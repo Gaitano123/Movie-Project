@@ -444,6 +444,7 @@ footer a:hover{
     height: 30px;
     border-radius: 7px;
     font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .enclose{
@@ -452,14 +453,6 @@ footer a:hover{
     top: 10px;
     right: 10px;
 }
-
-/* .open-popup{
-    visibility: visible;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    z-index: 100;
-} */
-
 .popout{
     width: 450px;
     height: 400px;
@@ -519,6 +512,7 @@ footer a:hover{
     height: 30px;
     border-radius: 7px;
     font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .inclose{
