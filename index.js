@@ -216,4 +216,40 @@ document.addEventListener('DOMContentLoaded', () => {
         infoLanguage.className = 'info-Language'
         infoContainer.appendChild(infoLanguage)
     }
+
+    const loginButton = document.getElementById('login')
+    loginButton.addEventListener('click', (e) =>{
+        e.preventDefault()
+        console.log(loginButton)
+        // openPopUp()
+        const open = document.getElementById('popup')
+        open.style.dispay= 'block'
+    } )
+
+    const loginClose = document.querySelector('span')
+    loginClose.addEventListener('click', (e) => {
+        e.preventDefault()
+        // closePopUp()
+        const close = document.getElementById('popup')
+        close.style.dispay= 'none'
+    } )
+
+    // function openPopUp(){
+    //     const open = document.getElementById('popup')
+    //     open.style.dispay= 'block'
+    // }
+
+    // function closePopUp(){
+    //     const close = document.getElementById('popup')
+    //     close.style.dispay= 'none'
+    // }
 })
+    // let popup = document.getElementById('login');
+
+    // function openPopUp(){
+    //     popup.classList.add('open-popup')
+    // }
+
+    // function closePopUp(){
+    //     popup.classList.remove('open-popup')
+    // }
