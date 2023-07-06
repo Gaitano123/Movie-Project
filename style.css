@@ -12,7 +12,7 @@ body{
 }
 
 .navbar{
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(15px);
     display: flex;
     width: 100%;
     height: 85px;
@@ -292,7 +292,7 @@ form button{
     height: 400px;
 }
 
-.heading-favourite{
+#heading-favourite{
     font-size: 35px;
     text-transform: uppercase;
     font-weight: 1100;
@@ -359,4 +359,20 @@ form button{
 
 .fav-package{
     align-items: center;
+}
+
+footer{
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+footer a{
+    font-size: 40px;
+    align-items: center;
+    padding-left: 60px;
+}
+
+footer a:hover{
+    color: #fff;
 }

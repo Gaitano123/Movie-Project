@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const resultContainer = document.getElementById('search-result');
     const detailContainer = document.getElementById('detail-movie')
+    detailContainer.innerHTML =''
     const form =  document.querySelector('form')
     const favouritecontainer = document.getElementById('favourite-movie')
     displayFavouriteMovie()
