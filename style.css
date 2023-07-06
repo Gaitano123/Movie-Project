@@ -15,12 +15,10 @@ body{
     backdrop-filter: blur(15px);
     display: flex;
     width: 100%;
-    height: 85px;
     justify-content: space-between;
     align-items: center;
+    overflow: visible;
     position: fixed;
-    overflow: hidden;
-    z-index: 1000;
 }
 
 .navbar ul{
@@ -45,13 +43,17 @@ body{
     padding-left: 100px;
 }
 
+.navlist > ul > li{
+    padding: 24px 0px 24px 100px;
+}
+
 .sub-movies{
     display: none;
-    background-color: rgb(65, 67, 71);
-    margin-top: 20px;
-    z-index: 2000;
-    height: 300px;
+    backdrop-filter: blur(10px);
+    margin-top: 10px;
+    backdrop-filter: blur(10px);
 }
+
 
 #list-sub-movies a{
     float: none;
@@ -63,10 +65,15 @@ body{
     position: absolute;
 }
 
+.submovies:hover{
+    display: block;
+    position: absolute;
+}
+
 .navbar ul li:hover .sub-movies ul{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
 }
 
 .navbar ul li:hover .sub-movies ul li{
@@ -74,14 +81,13 @@ body{
 }
 
 .navbar ul li:hover .sub-movies ul li a{
-    color: aliceblue;
+    color: #000;
 }
 
 .sub-series{
     display: none;
-    background-color: rgb(65, 67, 71);
-    margin-top: 20px;
-    z-index: 2000
+    backdrop-filter: blur(10px);
+    margin-top: 10px;
 }
 
 .navbar ul li:hover .sub-series{
@@ -92,7 +98,7 @@ body{
 .navbar ul li:hover .sub-series ul{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
 }
 
 .navbar ul li:hover .sub-series ul li{
@@ -100,7 +106,7 @@ body{
 }
 
 .navbar ul li:hover .sub-series ul li a{
-    color: aliceblue;
+    color: #000;
 }
 
 .navbutton button{
@@ -122,27 +128,21 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
 .search form input{
     border-radius: 5px;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
-}
-
-form button{
-    margin-top: 20px;
+    text-align: center;
 }
 
 #submitting{
-    width: 85px;
-    height: 50px;
     border: none;
+    padding: 8px 24px;
     color: #fff;
     align-items: center;
-    padding-top: 5px;
-    font-size: 35px;
+    font-size: 1.5em;
     font-weight: 1100;
     border-radius: 20px;
     background-color: rgb(152,131,244);
@@ -383,40 +383,4 @@ footer a{
 
 footer a:hover{
     color: #fff;
-}
-
-.modal{
-    display: none;
-    margin-top: 100vh;
-    position: absolute;
-    z-index: 1000000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.7);
-}
-
-.modal-content{
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 2px solid #888;
-    width: 80%;
-    max-width: 600px;
-}
-
-.close{
-    color: aqua;
-    float: right;
-    font-size: 30px;
-    font-weight: 900;
-}
-
-.close:hover,
-.close:focus{
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
 }
