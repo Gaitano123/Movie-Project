@@ -221,35 +221,24 @@ document.addEventListener('DOMContentLoaded', () => {
     loginButton.addEventListener('click', (e) =>{
         e.preventDefault()
         console.log(loginButton)
-        // openPopUp()
-        const open = document.getElementById('popup')
-        open.style.dispay= 'block'
+        document.getElementById('popup').classList.remove('hide')
     } )
 
     const loginClose = document.querySelector('span')
     loginClose.addEventListener('click', (e) => {
         e.preventDefault()
-        // closePopUp()
-        const close = document.getElementById('popup')
-        close.style.dispay= 'none'
+        document.getElementById('popup').classList.add('hide')
     } )
 
-    // function openPopUp(){
-    //     const open = document.getElementById('popup')
-    //     open.style.dispay= 'block'
-    // }
+    const signinButton = document.getElementById('signin')
+    signinButton.addEventListener('click', (e) =>{
+        e.preventDefault()
+        document.getElementById('popout').classList.remove('hide')
+    } )
 
-    // function closePopUp(){
-    //     const close = document.getElementById('popup')
-    //     close.style.dispay= 'none'
-    // }
+    const signinClose = document.getElementsByClassName('inclose')[0]; // Access the first element with the class name "inclose"
+    signinClose.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('popout').classList.add('hide');
+    });
 })
-    // let popup = document.getElementById('login');
-
-    // function openPopUp(){
-    //     popup.classList.add('open-popup')
-    // }
-
-    // function closePopUp(){
-    //     popup.classList.remove('open-popup')
-    // }

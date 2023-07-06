@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie-Project</title>
-    <link rel="icon" type="image/x-icon" href="/Image/download.png">
+    <link rel="icon" type="image/x-icon" href="./Image/download.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -57,7 +57,7 @@
             </div>
             <div class="navbutton">
                 <button id="login"><i class="fa-solid fa-user"></i> LOGIN</button>
-                <button><i class="fa-regular fa-user"></i> SIGNIN</button>
+                <button id="signin"><i class="fa-regular fa-user"></i> SIGNIN</button>
             </div>
         </div>
         <div class="search">
@@ -67,7 +67,7 @@
             </form>
         </div>
     </div>
-    <div class="popup" id="popup">
+    <div class="popup hide"  id="popup">
         <div class="popout_content">
             <span class="enclose">&times;</span>
             <form action="">
@@ -78,7 +78,25 @@
                 <label for="">password:
                     <input type="password">
                 </label>
+                <br>
                 <button id="clossing-pop" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popout hide"  id="popout">
+        <div class="popoutside_content">
+            <span class="inclose">&times;</span>
+            <form action="">
+                <label for="">Username:
+                    <input type="text">
+                </label>
+                <br>
+                <label for="">password:
+                    <input type="password">
+                </label>
+                <br>
+                <button id="clossed-pop" type="submit">signin</button>
             </form>
         </div>
     </div>
