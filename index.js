@@ -202,8 +202,8 @@ document.addEventListener('DOMContentLoaded', () => {
         infoContainer.appendChild(infoDirector)
 
         const infoPlot = document.createElement('p')
-        infoPlot.innerText = detail.Plot
-        infoPlot.className ="Plot: " + 'info-Plot'
+        infoPlot.innerText = "Plot: " +  detail.Plot
+        infoPlot.className = 'info-Plot'
         infoContainer.appendChild(infoPlot)
 
         const infoCountry = document.createElement('p')
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('popout').classList.remove('hide')
     } )
 
-    const signinClose = document.getElementsByClassName('inclose')[0]; // Access the first element with the class name "inclose"
+    const signinClose = document.getElementsByClassName('inclose')[0];
     signinClose.addEventListener('click', (e) => {
       e.preventDefault();
       document.getElementById('popout').classList.add('hide');
