@@ -38,18 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
         movieContainer.addEventListener('mouseout', (event) => {
-                event.preventDefault()
-                hoveringMovie(movie.imdbID)
-                const { clientX: mouseX, clientY: mouseY} = event
-                detailContainer.style.left = `${mouseX}px`
-                detailContainer.style.top = `${mouseY}px`
-                detailContainer.innerHTML = ''
+            event.preventDefault()
+            hoveringMovie(movie.imdbID)
+            const { clientX: mouseX, clientY: mouseY} = event
+            detailContainer.style.left = `${mouseX}px`
+            detailContainer.style.top = `${mouseY}px`
+            detailContainer.innerHTML = ''
+            detailContainer.classList.remove("visible")
         })
-        // movieContainer.addEventListener('mouseover',(event) => {
-        //     if(event.target.offsetParent != resultContainer){
-        //         resultContainer.classList.remove("visible")
-        //     }
-        // })
         resultContainer.appendChild(movieContainer)
 
         const moviePoster = document.createElement('img')
