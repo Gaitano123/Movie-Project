@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addFavouriteMovie(movie){
         if(!favouriteFilms.includes(movie.imdbID)){
-            fetch('http://localhost:3000/favourites', {
+            fetch('https://publicserver.onrender.com/favourites', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayFavouriteMovie(){
         favouritecontainer.innerText=''
 
-        fetch('http://localhost:3000/favourites')
+        fetch('https://publicserver.onrender.com/favourites')
         .then(response => response.json())
         .then(data => {
             data.forEach(movie =>{
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function removeFavourite(id){
 
-        fetch(`http://localhost:3000/favourites/${id}`,{
+        fetch(`https://publicserver.onrender.com/favourites/${id}`,{
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
